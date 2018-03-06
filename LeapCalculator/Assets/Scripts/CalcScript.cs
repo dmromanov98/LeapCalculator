@@ -9,48 +9,6 @@ using Leap;
 public class CalcScript : MonoBehaviour {
 
     public InputField inputField;
-    public GameObject Palm;
-    public Color StandartColor;
-    public Color NewColor;
-
-    public Vector3 OldPosition;
-    public GameObject CurrentButton;
-    public Vector3 bias;
-
-    public void SetNewScale(GameObject button)
-    {
-        if (CurrentButton == null)
-        {
-            OldPosition = button.transform.localPosition;
-            CurrentButton = button;
-            StandartColor = CurrentButton.gameObject.transform.Find("ButtonBackdrop").gameObject.GetComponent<UnityEngine.UI.Image>().color;
-            button.gameObject.transform.Find("ButtonBackdrop").gameObject.GetComponent<UnityEngine.UI.Image>().color = NewColor;
-
-            button.GetComponent<RectTransform>().localScale = new Vector3(1.5f, 1.5f, 1f);
-
-            Debug.Log("Button position was : "+ button.GetComponent<RectTransform>().localPosition);
-
-            button.GetComponent<RectTransform>().localPosition = new Vector3(
-                button.transform.localPosition.x, 
-                button.transform.localPosition.y, 
-                -30);
-        }
-
-    }
-
-    public void StandartScale(GameObject button)
-    {
-        if (CurrentButton != null)
-            if (CurrentButton.GetComponentInChildren<Text>().text.Equals(button.GetComponentInChildren<Text>().text))
-            {
-                button.gameObject.transform.Find("ButtonBackdrop").gameObject.GetComponent<UnityEngine.UI.Image>().color = StandartColor;
-                CurrentButton = null;
-                button.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
-                button.GetComponent<RectTransform>().localPosition = OldPosition;
-                //button.GetComponent<RectTransform>().position = new Vector3(button.transform.position.x, button.transform.position.y, 0.1f);
-                Debug.Log("Button position now : " + button.GetComponent<RectTransform>().localPosition.x);
-            }
-    }
 
     public void setTextToInputField()
     {
@@ -82,7 +40,7 @@ public class CalcScript : MonoBehaviour {
                 break;
 
             case "<-":
-                if(inputField.text.Length != 1)
+                if(inputField.text.Length > 1)
                     inputField.text = inputField.text.Substring(0, inputField.text.Length - 1);
                 else
                     inputField.text = "0";

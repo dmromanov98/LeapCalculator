@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b5da14ba63c7d4a4db24b5f46ff9aa6d
+timeCreated: 1520373135
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: GUERRILLA
+  fontNames:
+  - GUERRILLA
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
